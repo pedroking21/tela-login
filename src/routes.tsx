@@ -5,6 +5,9 @@ import PLogin from './pages/PLogin/PLogin';
 import PListaAlunos from './pages/PListagem/PListaAlunos/PListaAlunos';
 import PListaEmprestimos from './pages/PListagem/PListaEmprestimos/PListaEmprestimos';
 import PListagemLivros from './pages/PListagem/PListaLivros/PListaLivros';
+import PCadastroAluno from './pages/PCadastro/PCadastroAluno/PCadastroAluno';
+import PCadastroLivro from './pages/PCadastro/PCadastroLivro/PCadastroLivro';
+import PCadastroEmprestimo from './pages/PCadastro/PCadastroEmprestimo/PCadastroEmprestimo';
 
 /**
  * Componente que irá lidar com todas as rotas da aplicação
@@ -25,6 +28,11 @@ function AppRoutes() {
                 <Route path={APP_ROUTES.ROUTE_LISTAGEM_EMPRESTIMOS} element={<PListaEmprestimos />} />
                 {/* Quando a rota representada pela variável ROUTE_LISTAGEM_LIVROS é acessada, renderiza a página PListagemLivros */}
                 <Route path={APP_ROUTES.ROUTE_LISTAGEM_LIVROS} element={<PListagemLivros />} />
+
+
+                <Route path={APP_ROUTES.ROUTE_CADASTRO_ALUNO} element={<PCadastroAluno />} />
+                <Route path={APP_ROUTES.ROUTE_CADASTRO_EMPRESTIMO} element={<PCadastroEmprestimo />} />
+                <Route path={APP_ROUTES.ROUTE_CADASTRO_LIVRO} element={<PCadastroLivro />} />
             </Routes>
         </BrowserRouter>
     );

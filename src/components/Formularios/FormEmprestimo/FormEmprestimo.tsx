@@ -4,11 +4,11 @@ import EmprestimoRequests from '../../../fetch/EmprestimoRequests';
 
 function FormEmprestimo() {
     const [formData, setFormData] = useState({
-        idAluno: '',
-        idLivro: '',
+        idAluno: 0,
+        idLivro: 0,
         dataEmprestimo: '',
         dataDevolucao: '',
-        statusEmprestimo: '',
+        statusEmprestimo: false,
     });
 
     // Função para atualizar o state
@@ -17,7 +17,7 @@ function FormEmprestimo() {
     };
 
     // função para recuperar dados do formulário e enviar para a requisição
-    const handleSubmit = async (formData: { idAluno: number; idLivro: number; dataEmprestimo: string; dataDevolucao: string; statusEmprestimo: string; }) => {
+    const handleSubmit = async (formData: { idAluno: number; idLivro: number; dataEmprestimo: string; dataDevolucao: string; statusEmprestimo: boolean; }) => {
         const resposta = await EmprestimoRequests.enviaFormularioEmprestimo(JSON.stringify(formData));
         if(resposta) {
             alert('Emprestimo cadastrado com sucesso.');
